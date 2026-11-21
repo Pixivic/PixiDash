@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#053937">
+  <meta name="description" content="An endless pixel-art runner starring Pixivic.">
+  <title>PixiDash</title>
+  <link rel="icon" href="Pixidash%20assets/PixiDash.ico">
+  <link rel="stylesheet" href="game.css">
+  <script src="sprites.js" defer></script>
+  <script src="runner.js" defer></script>
+  <script src="crt.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game" aria-label="PixiDash. Tap, press Space, or press Up to jump. Hold for a higher jump.">
+    <div class="scene">
+      <canvas id="world" width="704" height="352" aria-hidden="true"></canvas>
+      <canvas id="crt-screen" width="1" height="1" aria-hidden="true"></canvas>
+      <div id="breath" class="breath" data-text="Huss... huss... huss..." aria-hidden="true" hidden><span></span></div>
+      <div id="score" class="score" hidden>
+        <span>Score</span>
+        <strong id="score-value">0</strong>
+      </div>
+      <div id="title" class="overlay title" inert>
+        <img id="title-logo" src="Pixidash assets/titleLogo.png" alt="PixiDash by Pixivic and Jovic" width="267" height="109" hidden>
+        <button id="start" type="button" disabled>Loading…</button>
+        <div class="title-controls audio-controls">
+          <button id="music-toggle" type="button" aria-label="Music" aria-pressed="true">Music: ON</button>
+          <button id="sound-toggle" type="button" aria-label="Sound" aria-pressed="true">Sound: ON</button>
+        </div>
+        <div class="title-controls display-controls">
+          <button id="crt-toggle" type="button" aria-label="CRT Filter" aria-pressed="false">CRT Filter: OFF</button>
+          <button id="credits-button" type="button" aria-controls="credits">Credits</button>
+        </div>
+      </div>
+      <section id="credits" class="overlay credits" aria-label="Credits" hidden>
+        <div class="credits-copy">
+          <p>All Sprites are made by Pixivic/Jovic</p>
+          <div>
+            <p>Music Used:</p>
+            <p>Kevin MacLeod - Pixelland</p>
+            <p>Jeremy Blake - Powerup!</p>
+          </div>
+        </div>
+        <button id="close-credits" type="button" aria-label="Return to main menu"></button>
+      </section>
+      <div id="result" class="overlay result" hidden>
+        <div class="result-copy">
+          <h1><span data-fill="u">U</span> <span data-fill="d">D</span><span data-fill="e">e</span><span data-fill="d">d</span></h1>
+          <p id="final-score"></p>
+          <button id="continue" type="button">GG</button>
+        </div>
+      </div>
+      <canvas id="return-wipe" aria-hidden="true" hidden></canvas>
+      <div id="intro" class="overlay intro">
+        <button id="enter-game" type="button">
+          <img src="Pixidash assets/titleLogo.png" alt="PixiDash" width="267" height="109">
+          <span>Tap to start</span>
+        </button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
